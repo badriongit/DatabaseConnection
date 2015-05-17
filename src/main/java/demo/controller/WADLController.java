@@ -44,7 +44,7 @@ public class WADLController {
     @Autowired
     private WebApplicationContext webApplicationContext;
  
-    @RequestMapping(method=RequestMethod.GET, produces={"application/xml"} ) 
+    @RequestMapping(method=RequestMethod.GET, produces={"application/json"} ) 
     public @ResponseBody Application generateWadl(HttpServletRequest request) {
         Application result = new Application();
         Doc doc = new Doc();
@@ -156,7 +156,7 @@ public class WADLController {
               
         }
         result.getResources().add(wadResources);
-          
+         
         return result;
     }
     private QName convertJavaToXMLType(Class<?> type) {

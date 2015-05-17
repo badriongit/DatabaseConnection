@@ -11,6 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
@@ -79,6 +80,16 @@ public class DatabaseConfig {
 		txMgr.setJpaDialect(jpaDialect());
 	    return txMgr;
 	}
+	
+//	@Bean
+//	public PersistenceAnnotationBeanPostProcessor persistenceAnnotationBeanPostProcessor(){
+//		PersistenceAnnotationBeanPostProcessor proc =  new PersistenceAnnotationBeanPostProcessor();
+//		proc.setDefaultPersistenceUnitName("entityManagerFactory");
+//		return proc;
+//		
+//	}
+	
+//	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 	
 
 }
